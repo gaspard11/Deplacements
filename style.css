@@ -25,4 +25,10 @@
 	height: 20%;
 }
 
+.maps{
+	display: flex;
+	flex-direction: row;
+	
+}
+
 
