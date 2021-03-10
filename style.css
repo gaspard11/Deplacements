@@ -1,0 +1,28 @@
+.div_pie{
+	height: 50%;
+	width: 50%;
+}
+
+.pies{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.div_hm{
+	height: 50%;
+	width: 50%;
+}
+
+.heatmaps{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+}
+
+.space{
+	height: 20%;
+}
+
+

@@ -1,0 +1,75 @@
+ <head>
+  <meta charset="UTF-8">
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="d3/d3.js"></script>
+ <script src="d3/d3-legend.js"></script>
+ <script src="Chartjs.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+ <script src="node_modules/file-saver/src/FileSaver.js"></script>
+ <script src="heatmap_data.js"></script>
+ <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+ <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+ 
+
+  
+
+
+  
+
+
+ </head>
+
+ <body>
+ 	<h1> TEST </h1>
+
+ 	<div class="pies">
+	 	<div id="div_pie_2019" class="div_pie">
+	 		<canvas id="pie_2019" class="div_pie"></canvas>
+	 	</div>
+	 	<div id="div_pie_2021" class="div_pie">
+	 		<canvas id="pie_2021"></canvas>
+	 	</div>
+	</div>
+	<div class = "space"></div>
+
+	<div class = "pies">
+	 	<div id="div_loisirs_2019" class="div_pie">
+	 		<canvas id="loisirs_2019" class="div_pie"></canvas>
+	 	</div>
+	 	<div id="div_loisirs_2021" class="div_pie">
+	 		<canvas id="loisirs_2021"></canvas>
+	 	</div>
+	</div>
+
+	<div class = "space"></div>
+
+	<div class = "heatmaps">
+		<div id="heatmap_2019" class="div_hm">
+
+	 	</div>
+
+		<div id="heatmap_2021" class="div_hm">
+
+	 	</div>
+	</div>
+
+	<div class="maps">
+		<div class = "left">
+			<div id='map_2019' style="width: 100%; height: 100%;"></div>
+		</div>
+		<div class = "right">
+			<div id='map_2021' style="width: 100%; height: 100%;"></div>
+		</div>
+	</div>
+
+
+	
+
+
+ </body>
+
+<!--  <script type="text/javascript" src="vis.js"></script>
+ <script type="text/javascript" src="heatmap_vis.js"></script> -->
+ <script type="text/javascript" src="vis_map.js"></script>
+ 
