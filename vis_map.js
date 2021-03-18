@@ -9,7 +9,6 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	var points_2021 = values[1];
 	var trajet_2019 = values[2];
 	var trajet_2021 = values[3];
-	console.log("jk");
 
 
 
