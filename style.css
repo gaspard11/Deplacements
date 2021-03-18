@@ -224,11 +224,11 @@ background: #3074a4;
 
 @font-face {
 	font-family: "BrandonTextW01-Bold"; 
-	src: url("Fonts/Brandon Text W01 Bold.woff2") format("woff2"); 
+	src: url("./Fonts/Brandon Text W01 Bold.woff2") format("woff2"); 
 }
 
 
 @font-face {
 	font-family: "BrandonText-Regular"; 
-	src: url("Fonts/Brandon Text Web Regular.woff2") format("woff2");
+	src: url("./Fonts/Brandon Text Web Regular.woff2") format("woff2");
 } 
