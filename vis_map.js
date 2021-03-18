@@ -1,6 +1,6 @@
 
 
-var files = ["http://localhost:8000/Data/points_2019_randoms.geojson","http://localhost:8000/Data/points_2021_randoms.geojson", "http://localhost:8000/Data/trajets_2019_randoms.JSON","http://localhost:8000/Data/trajets_2021_randoms.JSON"];
+var files = ["./Data/points_2019_randoms.geojson","./Data/points_2021_randoms.geojson", "./Data/trajets_2019_randoms.JSON","./Data/trajets_2021_randoms.JSON"];
 
 
 Promise.all(files.map(url => d3.json(url))).then(function(values) {
