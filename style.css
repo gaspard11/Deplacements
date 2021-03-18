@@ -1,3 +1,68 @@
+
+
+
+body{
+	background-color: #F1F7DF;
+}
+
+h1{
+	font-family: "BrandonTextW01-Bold";
+	font-size: 300%;
+	color: #30839C;
+	text-align: center;
+}
+h2{
+	font-family: "BrandonTextW01-Bold";
+	font-size: 500%;
+	color: #30839C;
+	text-align: center;
+
+}
+p{
+	font-family: "BrandonTextW01-Bold";
+	color: #30839C;
+
+
+}
+img{
+	height: 50%;
+	width: 15%;
+}
+svg{
+	height: 100%;
+	width: 100%;
+	fill: #30839C;
+}
+
+
+.pages{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div.svgcontainer{
+	width: 10%;
+	height: auto;
+}
+
+
+#soustitre{
+	font-size: 200%;
+	position: absolute;
+	bottom: 0;
+}
+#p2{
+	flex-direction: column;
+}
+#note{
+	font-size: 200%;
+	color: black;
+	position: relative;
+	bottom: 10;
+	text-align: center;
+}
+
 .div_pie{
 	height: 50%;
 	width: 50%;
@@ -7,11 +72,59 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	height: 100%;
+	width : 100%;
+}
+.compare{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 	100%;
+	height: 100%;
+}
+.figures{
+	display: flex;
+	flex-direction: column;	
+	justify-content: center;
+	align-items: center;
+	width: 	50%;
+	height: 100%;	
+}
+.figures p{
+	font-size: 200%;
 }
 
-.div_hm{
+#p4ter, #p7bis{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#p8{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+#p9{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#compare_school{
 	height: 50%;
+}
+
+
+
+
+
+.div_hm{
 	width: 50%;
+	height: 50%;
 }
 
 .heatmaps{
@@ -21,14 +134,101 @@
 	width: 100%;
 }
 
-.space{
-	height: 20%;
+#p11{
+	flex-direction: column;
+	justify-content: center;
+
 }
 
-.maps{
+#desc_hm{
+	color: black;
+	font-size: 200%;
+	position: relative;
+	bottom: 10;
+	text-align: center;
+}
+#p12{
+	flex-direction: column;
+	justify-content: center;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  height: 40%;
+  width: 50%;
+  padding-left: 4%;
+  padding-right: 1%;	
+}
+
+.mapmenu {
+background: #fff;
+position: relative;
+z-index: 1;
+top: 10px;
+right: 10px;
+border-radius: 3px;
+width: 120px;
+border: 1px solid rgba(0, 0, 0, 0.4);
+font-family: 'Open Sans', sans-serif;
+}
+ 
+.mapmenu a {
+font-size: 13px;
+color: #404040;
+display: block;
+margin: 0;
+padding: 0;
+padding: 10px;
+text-decoration: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+text-align: center;
+}
+ 
+.mapmenu a:last-child {
+border: none;
+}
+ 
+.mapmenu a:hover {
+background-color: #f8f8f8;
+color: #404040;
+}
+ 
+.mapmenu a.active {
+background-color: #3887be;
+color: #ffffff;
+}
+
+.mapmenu a.active:hover {
+background: #3074a4;
+}
+
+#maps{
+	height: 100vh;
 	display: flex;
 	flex-direction: row;
+	position: relative;	
+	justify-content: center;
 	
 }
 
+.mapdiv {
+    position: relative;
+    height: 90%; 
+    width: 50%;
+    margin: .5%;
+}
 
+@font-face {
+	font-family: "BrandonTextW01-Bold"; 
+	src: url("Fonts/Brandon Text W01 Bold.woff2") format("woff2"); 
+}
+
+
+@font-face {
+	font-family: "BrandonText-Regular"; 
+	src: url("Fonts/Brandon Text Web Regular.woff2") format("woff2");
+} 

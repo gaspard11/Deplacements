@@ -1,75 +1,348 @@
  <head>
-  <meta charset="UTF-8">
+ <meta charset="UTF-8">
+ 	<link href="//db.onlinewebfonts.com/c/b67dd0e7123c050baf059b5ce8ebc665?family=BrandonTextW01-Bold" rel="stylesheet" type="text/css"/>
+	 <link href="style.css" rel="stylesheet" type="text/css" />
+	 <script src="d3/d3.js"></script>
+	 <script src="d3/d3-legend.js"></script>
+	 <script src="Chartjs.min.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+	 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+	 <link rel="stylesheet" href="animate.css/animate.css">
+	 <script src="wow.min.js"></script>
 
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="d3/d3.js"></script>
- <script src="d3/d3-legend.js"></script>
- <script src="Chartjs.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
- <script src="node_modules/file-saver/src/FileSaver.js"></script>
- <script src="heatmap_data.js"></script>
- <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
- <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
  
 
-  
-
-
-  
-
+ 
 
  </head>
 
  <body>
- 	<h1> TEST </h1>
 
- <!-- 	<div class="pies">
-	 	<div id="div_pie_2019" class="div_pie">
-	 		<canvas id="pie_2019" class="div_pie"></canvas>
-	 	</div>
-	 	<div id="div_pie_2021" class="div_pie">
-	 		<canvas id="pie_2021"></canvas>
-	 	</div>
-	</div>
-	<div class = "space"></div>
+ 	<div id = "home", class="pages">
+ 		<h1 class> Déplacements & occupations d'un étudiant parisien en période de pandémie <br> Une comparaison 2019 / 2021 </h1>
 
-	<div class = "pies">
-	 	<div id="div_loisirs_2019" class="div_pie">
-	 		<canvas id="loisirs_2019" class="div_pie"></canvas>
-	 	</div>
-	 	<div id="div_loisirs_2021" class="div_pie">
-	 		<canvas id="loisirs_2021"></canvas>
-	 	</div>
-	</div>
 
-	<div class = "space"></div>
 
-	<div class = "heatmaps">
-		<div id="heatmap_2019" class="div_hm">
+ 		<p id="soustitre"> Gaspard Robert</p>
+ 	</div>
 
-	 	</div>
+ 	
 
-		<div id="heatmap_2021" class="div_hm">
+ 	<div id="p2" class="pages">
+ 		<h1 class="wow animate__animated animate__bounceIn">2 semaines étudiées, grâce aux données de géolocalisation de Google </h1>
+ 		<div id="presentation" class="compare">
+ 			<div id="presentation_2019" class="figures">
+ 				<h1 class="wow animate__animated animate__backInLeft">7 Janvier 2019 -> 20 Janvier 2019</h1>
+ 				<p class="wow animate__animated animate__backInLeft">1ère année à Télécom Paris</p>
+ 				<p class="wow animate__animated animate__backInLeft">Période d'examens</p>
+ 			</div>
+ 			<div id="presentation_2021" class="figures">
+ 				<h1 class="wow animate__animated animate__backInRight">18 Janvier 2021 -> 31 Janvier 2021</h1>
+ 				<p class="wow animate__animated animate__backInRight">3e année à Télécom Paris</p>
+ 				<p class="wow animate__animated animate__backInRight">Couvre feu à 18h</p>
+ 			</div>
+ 		</div>
+ 		<p id="note" class="wow animate__animated animate__bounceIn">Les données "brutes" sont récupérées grâce à la plateforme Google Takeouts, en format JSON<br>Google enregistre les lieux visités, mais aussi les "activités", soit les déplacements (à pieds, à vélo, en métro, etc)<br>J'ai classé les lieux visités en plusieurs catégories</p>
+ 	</div>
 
-	 	</div>
-	</div> -->
 
-	<div class="maps">
-		<div class = "left">
-			<div id='map_2019' style="width: 100%; height: 100%;"></div>
+ 	<div id = "p3", class="pages">
+ 		<h1 class="wow animate__animated animate__bounceIn"> "C'est dur d'avoir 20 ans en 2020"<br>Emmanuel Macron, 14 Octobre 2020 <br><br> ...</h1>
+
+
+ 	</div>
+ 	<div id="p3bis" class="pages">
+ 		<h1 class="wow animate__animated animate__zoomIn">En tout cas, c'est différent</h1>
+ 	</div>
+
+
+ 	<div id="p4" class="pages">
+	 	<div class="pies">
+		 	<div id="div_pie_2019" class="div_pie">
+		 		<canvas id="pie_2019" class="div_pie"></canvas>
+		 	</div>
+		 	<div id="div_pie_2021" class="div_pie">
+		 		<canvas id="pie_2021"></canvas>
+		 	</div>
 		</div>
-		<div class = "right">
-			<div id='map_2021' style="width: 100%; height: 100%;"></div>
+	</div>
+
+	<div id="p4bis" class="pages">
+ 		<h1 class="wow animate__animated animate__zoomIn">C'est encore plus vrai en enlevant la nuit ...</h1>
+ 	</div>
+
+	<div id="p4ter" class="pages">
+		<h1 class="wow animate__animated animate__zoomIn">Entre 8h et 22h</h1>
+	 	<div class="pies">
+		 	<div id="div_pie_sn_2019" class="div_pie">
+		 		<canvas id="pie_sn_2019" class="div_pie"></canvas>
+		 	</div>
+		 	<div id="div_pie_sn_2021" class="div_pie">
+		 		<canvas id="pie_sn_2021"></canvas>
+		 	</div>
 		</div>
 	</div>
+
+
+	<div id="p5" class="pages">
+		<h1 class="wow animate__animated animate__zoomIn"> Loisirs ? <br><br> ...</h1>
+	</div>
+
+
+	<div id="p6" class="pages">
+
+		<div class = "pies">
+		 	<div id="div_loisirs_2019" class="div_pie">
+		 		<canvas id="loisirs_2019" class="div_pie"></canvas>
+		 	</div>
+		 	<div id="div_loisirs_2021" class="div_pie">
+		 		<canvas id="loisirs_2021"></canvas>
+		 	</div>
+		</div>
+
+	</div>
+
+	<div id="p7" class="pages">
+		<div id="compare_figures" class="compare">
+			<div id="2019_figures" class="figures">
+				<h2 class="wow animate__animated animate__backInLeft">2 semaines en 2019</h2>
+				<div id = "cine" class = "svgcontainer wow animate__animated animate__backInLeft">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 197.442 197.442" xml:space="preserve">
+					<path d="M186.696,83.902H40.775l136.473-49.707c1.246-0.454,2.261-1.384,2.821-2.586c0.56-1.202,0.62-2.577,0.166-3.823
+						l-8.923-24.497c-0.945-2.596-3.815-3.928-6.409-2.987L9.035,57.074c-1.246,0.454-2.26,1.384-2.821,2.586
+						c-0.56,1.202-0.62,2.577-0.166,3.823l8.922,24.496c0.159,0.436,0.381,0.828,0.638,1.188v103.275c0,2.762,2.239,5,5,5h166.088
+						c2.762,0,5-2.238,5-5v-77.469V88.902C191.696,86.14,189.458,83.902,186.696,83.902z M166.123,18.262l3.005,8.248l-4.662,1.698
+						L166.123,18.262z M128.872,24.068l19.34-7.044l-3.034,18.209l-19.34,7.044L128.872,24.068z M90.245,38.137l19.339-7.044
+						l-3.034,18.209l-19.339,7.044L90.245,38.137z M51.617,52.207l19.339-7.044l-3.034,18.208l-19.338,7.044L51.617,52.207z
+						 M32.328,59.233l-3.034,18.208l-6.638,2.418l-5.5-15.1L32.328,59.233z M32.876,109.973h-7.065V93.902h16.148L32.876,109.973z
+						 M73.986,109.973H53.405l9.083-16.071h20.582L73.986,109.973z M115.097,109.973H94.515l9.082-16.071h20.583L115.097,109.973z
+						 M156.208,109.973h-20.583l9.083-16.071h20.583L156.208,109.973z M181.696,109.973h-4.961l4.961-8.778V109.973z"/>
+					</svg>
+				</div>
+				<p class = "svgcontainer wow animate__animated animate__backInLeft"><FONT size="600%"> 5h42 </FONT>au cinéma</p>
+				<div id = "restaurant" class="svgcontainer wow animate__animated animate__backInLeft">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500.043 500.043" xml:space="preserve">
+					<path d="M396.86,189.696h-51.816v-8.471c16.876-12.499,27.84-32.548,27.84-55.113c0-33.43-24.055-61.349-55.764-67.356
+						C307.903,24.725,276.851,0.001,240.165,0c-20.304,0.001-39.79,7.852-54.44,21.513c-5.231-1.368-10.64-2.072-16.077-2.072
+						c-25.849,0-48.398,15.683-58.222,38.235c-1.34-0.079-2.687-0.118-4.037-0.118c-37.8,0-68.553,30.753-68.553,68.553
+						c0,20.813,9.335,39.475,24.024,52.058v283.526c0,16.5,13.5,30,30,30h222.184c16.5,0,30-13.5,30-30v-44h51.816
+						c30.878,0,56-25.122,56-56v-116C452.86,214.817,427.738,189.696,396.86,189.696z M304.331,156.665l-175.536,0v61.051
+						c0,10.493-8.507,19-19,19c-10.493,0-19-8.507-19-19v-65.971c-8.393-5.452-13.959-14.902-13.959-25.634
+						c0-16.847,13.706-30.553,30.553-30.553c3.792,0,7.503,0.694,11.032,2.062c5.636,2.185,11.976,1.559,17.075-1.689
+						c5.099-3.248,8.348-8.728,8.751-14.759c0.889-13.307,12.046-23.731,25.401-23.731c4.356,0,8.485,1.06,12.27,3.149
+						c8.375,4.622,18.88,2.297,24.523-5.427C214.409,44.256,226.701,38,240.165,38c22.277,0,40.586,17.408,41.682,39.631
+						c0.251,5.1,2.545,9.885,6.365,13.274c3.819,3.39,8.842,5.104,13.936,4.744c0.884-0.062,1.578-0.09,2.183-0.09
+						c16.847,0,30.553,13.706,30.553,30.553S321.178,156.665,304.331,156.665z M400.86,361.696c0,2.131-1.869,4-4,4h-51.816v-124h51.816
+						c2.131,0,4,1.869,4,4V361.696z"/>
+					</svg>
+				</div>
+				<p class = "svgcontainer wow animate__animated animate__backInLeft"><FONT size="600%"> 10h36 </FONT>au bar ou au restaurant</p>
+				<div id="sport" class="svgcontainer wow animate__animated animate__backInLeft">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500.043 500.043" xml:space="preserve">
+						<g>
+							<g>
+								<path d="M491.445,206.857c-4.752,0-8.605,4.857-8.605,10.834c0,16.582,0,48.1,0,64.672c0,5.977,3.854,10.824,8.615,10.824
+									c4.752,0,8.588-4.848,8.588-10.824c0-16.562,0-48.081,0-64.682C500.043,211.714,496.197,206.857,491.445,206.857z"/>
+								<path d="M8.616,206.857c-4.752,0-8.616,4.857-8.616,10.834c0,16.601,0,48.071,0.01,64.653c0,5.977,3.854,10.824,8.606,10.844
+									c4.753,0,8.597-4.848,8.597-10.824c0-16.572,0-48.081,0.01-64.682C17.222,211.714,13.369,206.857,8.616,206.857z"/>
+								<path d="M114.568,108.812c-15.854,0-28.716,14.544-28.716,32.474c0,54.354,0.01,163.137,0.02,217.471
+									c0,17.93,12.842,32.473,28.697,32.473s28.716-14.553,28.716-32.473c0-21.316,0-51.045,0-82.545c16.553,0,164.713,0,208.874,0
+									c0,31.51,0,61.229,0,82.555c0,17.92,12.861,32.463,28.717,32.463c15.854,0,28.697-14.553,28.697-32.473
+									c0-54.354,0-163.137,0-217.471c0-17.939-12.844-32.474-28.697-32.474c-15.855,0-28.717,14.525-28.717,32.474
+									c0,21.315,0,51.035,0,82.543c-44.178,0-192.321,0-208.874,0c0-31.508,0-61.229,0-82.553
+									C143.285,123.338,130.433,108.812,114.568,108.812z"/>
+								<path d="M447.602,152.188c-0.938,0-1.865,0-2.811,0c-11.945,0-21.641,9.668-21.641,21.63c0,37.647,0,114.76,0,152.406
+									c0,11.953,9.695,21.65,21.648,21.65c0.938,0,1.885,0,2.812,0c11.953,0,21.648-9.668,21.648-21.631
+									c0-37.637,0-114.759-0.008-152.407C469.26,161.875,459.555,152.188,447.602,152.188z"/>
+								<path d="M52.116,152.188c-0.937,0-1.884,0-2.821,0c-11.953,0-21.64,9.668-21.64,21.63c0,37.647,0,114.76,0,152.406
+									c0,11.963,9.687,21.65,21.64,21.65c0.937,0,1.884,0,2.811,0c11.953,0,21.64-9.668,21.64-21.631c0-37.637,0-114.759,0-152.407
+									C73.756,161.875,64.069,152.188,52.116,152.188z"/>
+							</g>
+						</g>
+					</svg>
+				</div>
+				<p class = "svgcontainer wow animate__animated animate__backInLeft"><FONT size="600%"> 3h31 </FONT>dans un gymnase</p>
+			</div>
+			<div id="2021_figures" class="figures">
+				<h2 class="wow animate__animated animate__backInRight">2 semaines en 2021</h2>
+				<div id = "cine_" class = "svgcontainer wow animate__animated animate__backInRight">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 197.442 197.442" xml:space="preserve">
+					<path d="M186.696,83.902H40.775l136.473-49.707c1.246-0.454,2.261-1.384,2.821-2.586c0.56-1.202,0.62-2.577,0.166-3.823
+						l-8.923-24.497c-0.945-2.596-3.815-3.928-6.409-2.987L9.035,57.074c-1.246,0.454-2.26,1.384-2.821,2.586
+						c-0.56,1.202-0.62,2.577-0.166,3.823l8.922,24.496c0.159,0.436,0.381,0.828,0.638,1.188v103.275c0,2.762,2.239,5,5,5h166.088
+						c2.762,0,5-2.238,5-5v-77.469V88.902C191.696,86.14,189.458,83.902,186.696,83.902z M166.123,18.262l3.005,8.248l-4.662,1.698
+						L166.123,18.262z M128.872,24.068l19.34-7.044l-3.034,18.209l-19.34,7.044L128.872,24.068z M90.245,38.137l19.339-7.044
+						l-3.034,18.209l-19.339,7.044L90.245,38.137z M51.617,52.207l19.339-7.044l-3.034,18.208l-19.338,7.044L51.617,52.207z
+						 M32.328,59.233l-3.034,18.208l-6.638,2.418l-5.5-15.1L32.328,59.233z M32.876,109.973h-7.065V93.902h16.148L32.876,109.973z
+						 M73.986,109.973H53.405l9.083-16.071h20.582L73.986,109.973z M115.097,109.973H94.515l9.082-16.071h20.583L115.097,109.973z
+						 M156.208,109.973h-20.583l9.083-16.071h20.583L156.208,109.973z M181.696,109.973h-4.961l4.961-8.778V109.973z"/>
+					</svg>
+				</div>
+				<p class="wow animate__animated animate__backInRight"><FONT size="600%"> 0min </FONT>au cinéma</p>
+				<div id = "restaurant_" class="svgcontainer wow animate__animated animate__backInRight">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500.043 500.043" xml:space="preserve">
+					<path d="M396.86,189.696h-51.816v-8.471c16.876-12.499,27.84-32.548,27.84-55.113c0-33.43-24.055-61.349-55.764-67.356
+						C307.903,24.725,276.851,0.001,240.165,0c-20.304,0.001-39.79,7.852-54.44,21.513c-5.231-1.368-10.64-2.072-16.077-2.072
+						c-25.849,0-48.398,15.683-58.222,38.235c-1.34-0.079-2.687-0.118-4.037-0.118c-37.8,0-68.553,30.753-68.553,68.553
+						c0,20.813,9.335,39.475,24.024,52.058v283.526c0,16.5,13.5,30,30,30h222.184c16.5,0,30-13.5,30-30v-44h51.816
+						c30.878,0,56-25.122,56-56v-116C452.86,214.817,427.738,189.696,396.86,189.696z M304.331,156.665l-175.536,0v61.051
+						c0,10.493-8.507,19-19,19c-10.493,0-19-8.507-19-19v-65.971c-8.393-5.452-13.959-14.902-13.959-25.634
+						c0-16.847,13.706-30.553,30.553-30.553c3.792,0,7.503,0.694,11.032,2.062c5.636,2.185,11.976,1.559,17.075-1.689
+						c5.099-3.248,8.348-8.728,8.751-14.759c0.889-13.307,12.046-23.731,25.401-23.731c4.356,0,8.485,1.06,12.27,3.149
+						c8.375,4.622,18.88,2.297,24.523-5.427C214.409,44.256,226.701,38,240.165,38c22.277,0,40.586,17.408,41.682,39.631
+						c0.251,5.1,2.545,9.885,6.365,13.274c3.819,3.39,8.842,5.104,13.936,4.744c0.884-0.062,1.578-0.09,2.183-0.09
+						c16.847,0,30.553,13.706,30.553,30.553S321.178,156.665,304.331,156.665z M400.86,361.696c0,2.131-1.869,4-4,4h-51.816v-124h51.816
+						c2.131,0,4,1.869,4,4V361.696z"/>
+					</svg>
+				</div>
+				<p class="wow animate__animated animate__backInRight"><FONT size="600%"> 0min </FONT>au bar ou au restaurant</p>
+				<div id="sport_" class="svgcontainer wow animate__animated animate__backInRight">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500.043 500.043" xml:space="preserve">
+						<g>
+							<g>
+								<path d="M491.445,206.857c-4.752,0-8.605,4.857-8.605,10.834c0,16.582,0,48.1,0,64.672c0,5.977,3.854,10.824,8.615,10.824
+									c4.752,0,8.588-4.848,8.588-10.824c0-16.562,0-48.081,0-64.682C500.043,211.714,496.197,206.857,491.445,206.857z"/>
+								<path d="M8.616,206.857c-4.752,0-8.616,4.857-8.616,10.834c0,16.601,0,48.071,0.01,64.653c0,5.977,3.854,10.824,8.606,10.844
+									c4.753,0,8.597-4.848,8.597-10.824c0-16.572,0-48.081,0.01-64.682C17.222,211.714,13.369,206.857,8.616,206.857z"/>
+								<path d="M114.568,108.812c-15.854,0-28.716,14.544-28.716,32.474c0,54.354,0.01,163.137,0.02,217.471
+									c0,17.93,12.842,32.473,28.697,32.473s28.716-14.553,28.716-32.473c0-21.316,0-51.045,0-82.545c16.553,0,164.713,0,208.874,0
+									c0,31.51,0,61.229,0,82.555c0,17.92,12.861,32.463,28.717,32.463c15.854,0,28.697-14.553,28.697-32.473
+									c0-54.354,0-163.137,0-217.471c0-17.939-12.844-32.474-28.697-32.474c-15.855,0-28.717,14.525-28.717,32.474
+									c0,21.315,0,51.035,0,82.543c-44.178,0-192.321,0-208.874,0c0-31.508,0-61.229,0-82.553
+									C143.285,123.338,130.433,108.812,114.568,108.812z"/>
+								<path d="M447.602,152.188c-0.938,0-1.865,0-2.811,0c-11.945,0-21.641,9.668-21.641,21.63c0,37.647,0,114.76,0,152.406
+									c0,11.953,9.695,21.65,21.648,21.65c0.938,0,1.885,0,2.812,0c11.953,0,21.648-9.668,21.648-21.631
+									c0-37.637,0-114.759-0.008-152.407C469.26,161.875,459.555,152.188,447.602,152.188z"/>
+								<path d="M52.116,152.188c-0.937,0-1.884,0-2.821,0c-11.953,0-21.64,9.668-21.64,21.63c0,37.647,0,114.76,0,152.406
+									c0,11.963,9.687,21.65,21.64,21.65c0.937,0,1.884,0,2.811,0c11.953,0,21.64-9.668,21.64-21.631c0-37.637,0-114.759,0-152.407
+									C73.756,161.875,64.069,152.188,52.116,152.188z"/>
+							</g>
+						</g>
+					</svg>
+				</div>
+				<p class="wow animate__animated animate__backInRight"><FONT size="600%"> 0min </FONT>dans un gymnase</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="p7bis" class="pages">
+		<h2 class="wow animate__animated animate__zoomIn">Sociabiliser</h2>
+		<div id="compare_social" class="compare">
+			<div id="2019_social" class="figures">
+				<p class="wow animate__animated animate__backInLeft"><FONT size="600%">Lieux publics, cercle étendu</FONT></p>
+				<p class="wow animate__animated animate__backInLeft">... rencontres</p>
+				<p class="wow animate__animated animate__backInLeft"><FONT size="600%"> 9h06 </FONT> au bar de Télécom Paris (Télécom Bar'I)</p>
+			</div>
+			<div id="2021_social" class="figures">
+				<p class="wow animate__animated animate__backInRight"><FONT size="600%">Chez des amis proches, en cercle restreint</FONT></p>
+				<p class="wow animate__animated animate__backInRight">Couvre feu à 18h + obligé de rester toute la nuit</p>
+				<p class="wow animate__animated animate__backInRight"><FONT size="600%"> 48h28 </FONT>chez des amis</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="p8">
+		<h2 class="wow animate__animated animate__zoomIn">Mon école : Télécom Paris</h2>
+		<img class="wow animate__animated animate__zoomIn" src="https://upload.wikimedia.org/wikipedia/fr/thumb/d/d9/Logo_T%C3%A9l%C3%A9com_ParisTech.svg/1200px-Logo_T%C3%A9l%C3%A9com_ParisTech.svg.png" >
+
+	</div>
+
+	<div id="p9" class="pages">
+		<div id="compare_school" class="compare">
+			<div id="2019_school" class="figures">
+				<h2 class="wow animate__animated animate__backInLeft">2019</h2>
+				<p class="wow animate__animated animate__backInLeft"><FONT size="600%">46 Rue Barrault, Paris 13e</FONT></p>
+				<p class="wow animate__animated animate__backInLeft">Temps passé : <FONT size="600%"> 56h24 </FONT></p>
+			</div>
+			<div id="2021_school" class="figures">
+				<h2 class="wow animate__animated animate__backInRight">2021</h2>
+				<p class="wow animate__animated animate__backInRight"><FONT size="600%">19 Place Marguerite Perey, Palaiseau</FONT></p>
+				<p class="wow animate__animated animate__backInRight">Temps passé : <FONT size="600%"> 14h54 </FONT></p>
+			</div>
+		</div>
+		<p><FONT size="200%">(Sur 2 semaines)</FONT></p>
+	</div>
+
+	<div id="p10" class="pages">
+		<h1 class="wow animate__animated animate__zoomIn"> Une journée type </h1>
+	</div>
+
+
+	<div id="p11" class="pages">
+		<div class = "heatmaps">
+			<div id="heatmap_2019" class="div_hm">
+	 		</div>
+
+			<div id="heatmap_2021" class="div_hm">
+	 		</div>
+		</div>
+		<p class="wow animate__animated animate__zoomIn" id="desc_hm">Pour chaque heure, le lieu dans lequel je suis resté le plus longtemps donne sa couleur au carré correspondant</p>
+	</div>
+		
+	</div id = "p12" class = "pages">
+		<h1 class="wow animate__animated animate__zoomIn"> En faisant une moyenne ...</h1>
+		<div id="compare_moy " class="compare ">
+			<div class="grid-container wow animate__animated animate__zoomIn" id="grid1">
+			</div>
+			<div class="grid-container wow animate__animated animate__zoomIn" id="grid2">
+			</div>
+		</div>
+	</div>
+
+	<div id = "p13" class = "pages">
+		<h1 class="wow animate__animated animate__zoomIn">Daplacements ? <br><br> ...</h1>
+	</div>
+
+	<div id="p14" class="pages">
+		<div id = "transports" class = "heatmaps">
+
+		</div>
+	</div>
+
+	<div id="p15" class="pages">
+		<div id = "transports_%" class = "heatmaps">
+
+		</div>
+	</div>
+
+	<div id="p16" class="pages">
+		<h1 class="wow animate__animated animate__zoomIn">Et sur une carte ?</h1>
+	</div>
+
+	
+	<div id="maps">
+		<div id='map_2019' class="mapdiv">
+			<nav id="menu_2019" class="mapmenu"></nav>
+		</div>
+
+		<div id='map_2021' class="mapdiv">
+			<nav id="menu_2021" class="mapmenu"></nav>
+		</div>	
+	</div>
+
+	<script>
+        var wow = new WOW(
+      	{
+  		boxClass:     'wow',      // default
+        animateClass: 'animated', // default
+        offset:       0,          // default
+        mobile:       true,       // default
+        live:         true
+      	});
+      wow.init();
+     </script>
+      
+
+		
+		
 
 
 	
 
 
  </body>
-
-<!--  <script type="text/javascript" src="vis.js"></script>
- <script type="text/javascript" src="heatmap_vis.js"></script> -->
+ <script type="text/javascript" src="vis.js"></script>
  <script type="text/javascript" src="vis_map.js"></script>
  
