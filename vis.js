@@ -1,4 +1,4 @@
-let files_v = ["./Data/piechart_general_2019.json","./Data/piechart_general_2021.json","./Data/piechart_general_sansnuit_2019.json","./Data/piechart_general_sansnuit_2021.json","./Data/loisirs_2019.json","./Data/loisirs_2021.json","./Data/deplacements_2019.json","./Data/deplacements_2021.json","./Data/heatmap_dataset_2021.JSON","./Data/heatmap_dataset_2019.JSON","./Data/colors_2019.JSON","./Data/colors_2021.JSON"];
+let files_v = ["./Data/piechart_general_2019.JSON","./Data/piechart_general_2021.JSON","./Data/piechart_general_sansnuit_2019.JSON","./Data/piechart_general_sansnuit_2021.JSON","./Data/loisirs_2019.JSON","./Data/loisirs_2021.JSON","./Data/deplacements_2019.JSON","./Data/deplacements_2021.JSON","./Data/heatmap_dataset_2021.JSON","./Data/heatmap_dataset_2019.JSON","./Data/colors_2019.JSON","./Data/colors_2021.JSON"];
 
 
 
