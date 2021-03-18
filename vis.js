@@ -6,31 +6,18 @@ let files_v = ["./Data/piechart_general_2019.JSON","./Data/piechart_general_2021
 
 Promise.all(files_v.map(url => d3.json(url))).then(function(values) {
   var got = 0;
-  console.log("k");
   var sums_2019 = values[0][1];
-  console.log("k");
   var sums_2021 = values[1];
-  console.log("k");
   var sums_2019_sans_nuit = values[2];
-  console.log("k");
   var sums_2021_sans_nuit = values[3];
-  console.log("k");
   var [loisirs_2019_labels, loisirs_2019_sums] = values[4];
-  console.log("k");
   var [loisirs_2021_labels, loisirs_2021_sums] = values[5];
-  console.log("k");
   var [deplacements_2019_labels, deplacements_2019_sums] = values[6];
-  console.log("k");
   var [deplacements_2021_labels, deplacements_2021_sums] = values[7];
-  console.log("k");
   var dataset_2021 = values[8];
-  console.log("k");
   var dataset_2019 = values[9];
-  console.log("k");
   var heat_moy_2019 = values[10];
-  console.log("k");
   var heat_moy_2021 = values[11];
-  console.log("k");
     
 
     function getTimePropre(ms){
